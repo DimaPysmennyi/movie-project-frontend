@@ -1,5 +1,9 @@
+import { PopularFilms } from "./PopularFilms"
+
 export function App(){
     return (
-        <div></div>
+        <div>
+            <PopularFilms></PopularFilms>
+        </div>
     )
 }
