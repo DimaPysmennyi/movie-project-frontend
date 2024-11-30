@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.popularFilms{
+    background-color: #14181C;
+    color: white;
+    font-size: 30px;
+}
+
+.popularFilms hr{
+    color: #CDCDCD;
+    margin: 0px;
+}
+
+.films{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.films img{
+    height: 360px;
+    width: 240px;
+    border-radius: 10px;
+}
+
+.films div{
+    margin: 30px 28px 40px 28px;
+}
+
+.popularFilms h2{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
