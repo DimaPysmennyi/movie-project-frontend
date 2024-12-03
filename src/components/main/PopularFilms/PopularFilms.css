@@ -4,6 +4,7 @@
     background-color: #14181C;
     color: white;
     font-size: 30px;
+    margin: 25px 0 25px 0;
 }
 
 .popularFilms hr{
@@ -13,7 +14,7 @@
 
 .films{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: center;
     
 }
@@ -30,8 +31,8 @@
 
 .popularFilms h2{
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    margin-bottom: 30px;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    margin-bottom: 15px;
 }
 

@@ -1,6 +1,7 @@
 .carousel{
     width: 75%;
     margin: auto;
+    margin-top: 80px;
     text-align: center;
     border: 1px solid white;
     border-radius: 10px;
