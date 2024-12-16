@@ -1,0 +1,78 @@
+.films-page{
+    background-color: #55626C;
+    height: 100%;
+    min-height: 85.6vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.text{
+    height: 250px;
+    background-color: #1E3E4D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 2px solid #2E2E2E;
+}
+
+.text p{
+    color: white;
+    font-size: 32px;
+    font-family: 'Source Serif Pro';
+}
+
+.text h1{
+    color: white;
+    font-size: 40px;
+    font-family: 'Source Serif Pro';
+}
+
+.selected-films{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.film-card{
+    background-color: #13171B;
+    width: 270px;
+    height: 470px;
+    margin: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.film-card img{
+    width: 100%;
+    height: 350px;
+    border-top: 0px solid transparent;
+    border-radius: 10px;
+}
+
+.films-list{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.film-card p{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.select-genre select{
+    margin: 10px 0 5px 30px;
+    width: 270px;
+    height: 65px;
+    font-size: 32px;
+    border: 2px solid black;
+    border-radius:5px;
+    background-color: #F5F1ED;
+    opacity: 60%;
+    font-family: 'Source Serif Pro';
+    cursor: pointer;
+}
