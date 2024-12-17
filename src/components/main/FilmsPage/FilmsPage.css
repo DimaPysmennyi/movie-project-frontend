@@ -31,7 +31,7 @@
 .selected-films{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
     
 }
 
@@ -46,10 +46,23 @@
     font-size: 30px;
 }
 
+.film-card .film-image{
+    display: flex;
+    justify-content: left;
+    width: 270px;
+    height: 350px;
+    border-radius: 10px;
+    background-image: url('https://preview.redd.it/official-poster-for-dune-prophecy-v0-rsh60b58clpd1.jpeg?auto=webp&s=986ccca6dcf1bb1954df74f4dca27771b8dc84ba');
+    background-position: center;
+    background-size: 105%;
+    background-repeat: no-repeat;
+    padding: 5px;
+}
+
 .film-card img{
     width: 100%;
     height: 350px;
-    border-top: 0px solid transparent;
+    /* border-top: 0px solid transparent; */
     border-radius: 10px;
 }
 
@@ -64,8 +77,14 @@
     margin-bottom: 0;
 }
 
+.select-genre{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .select-genre select{
-    margin: 10px 0 5px 30px;
+    margin: 10px 0 10px 0;
     width: 270px;
     height: 65px;
     font-size: 32px;
@@ -75,4 +94,13 @@
     opacity: 60%;
     font-family: 'Source Serif Pro';
     cursor: pointer;
+}
+
+.watchlist-button svg{
+    opacity: 0.4;
+    transition: all 0.1s ease;
+}
+
+.watchlist-button svg:hover{
+    opacity: 0.6;
 }

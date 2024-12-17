@@ -1,4 +1,4 @@
-import { CarouselComponent } from "../Carousel/Carousel";
+import { CarouselComponent } from "../carousel/Carousel";
 import { PopularFilms } from "../PopularFilms/PopularFilms";
 import { PopularReviews } from "../PopularReviews/PopularReviews";
 import './MainPage.css'

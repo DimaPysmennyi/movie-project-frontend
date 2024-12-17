@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import './Layout.css'
 
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header/Header";
+import { Header } from "../header/Header";
 import { Main } from "../main/Main/Main";
-import { Footer } from "../Footer/Footer";
+import { Footer } from "../footer/Footer";
 
 interface ILayoutProps{
     children?: ReactNode
