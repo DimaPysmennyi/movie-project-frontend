@@ -1,6 +1,6 @@
-import { CarouselComponent } from "../carousel/Carousel";
-import { PopularFilms } from "../PopularFilms/PopularFilms";
-import { PopularReviews } from "../PopularReviews/PopularReviews";
+import { CarouselComponent } from "../../shared/Carousel/Carousel";
+import { PopularFilms } from "../../shared/PopularFilms/PopularFilms";
+import { PopularReviews } from "../../shared/PopularReviews/PopularReviews";
 import './MainPage.css'
 
 export function MainPage(){
