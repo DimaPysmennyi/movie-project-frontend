@@ -6,6 +6,10 @@
     font-weight: 400;
 }
 
+body{
+    min-height: 100%;
+}
+
 .layout{
     display: flex;
     flex-direction: column;

@@ -25,7 +25,7 @@ export function PopularReviews(){
             <div className='reviews'>
                 {reviews.map((review) => {
                     return (
-                        <div className='review'>
+                        <div className='popularReview'>
                             <img src={review.src} className='reviewImg' />
                             <p className='reviewText'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime natus soluta, voluptatibus voluptatem placeat provident nemo ducimus doloribus nobis cumque mollitia rem quidem at voluptate officiis repellat sequi ipsum enim!
                             Iusto ullam tenetur dolorem nam adipisci dolores inventore ab. Vitae rem quis sed laborum, sint suscipit, reiciendis iste ab praesentium sunt saepe corrupti blanditiis, animi nisi odio. Illum, quasi eos.

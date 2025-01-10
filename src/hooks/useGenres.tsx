@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 
+export interface IGenre{
+    id: number,
+    name: string,
+    description: string,
+}
+
 export function useGenres(){
-    const [genres, setGenres] = useState<string[]>([]);
+    const [genres, setGenres] = useState<IGenre[]>([]);
 
     useEffect(() => {   
         async function getGenres(){
@@ -12,5 +18,5 @@ export function useGenres(){
 
         getGenres();
     }, [])
-    return {genres: genres}
+    return {genres: genres};
 }

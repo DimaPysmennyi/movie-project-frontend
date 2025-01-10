@@ -7,7 +7,13 @@ export interface IMovie{
     age: string,
     year: number,
     country: string,
-    language: string
+    language: string,
+    description: string,
+    facts: string,
+    previewSrc: string,
+    shots: string,
+    genres: any[],
+    actors: any[],
 }
 
 export function useMovies(){
