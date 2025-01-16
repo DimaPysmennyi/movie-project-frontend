@@ -14,6 +14,7 @@ export interface IMovie{
     shots: string,
     genres: any[],
     actors: any[],
+    reviews: any[]
 }
 
 export function useMovies(){

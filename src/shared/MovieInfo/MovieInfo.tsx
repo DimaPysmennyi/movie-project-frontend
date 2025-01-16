@@ -1,15 +1,28 @@
-import { ReactNode } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IMovie } from "../../hooks/useMovies";
 import './MovieInfo.css';
+import { Modal } from "../Modal/Modal";
+import { StarFill } from "react-bootstrap-icons";
 
 interface IMovieProps{
     children: IMovie;
 }
 
 export function MovieInfo(props: IMovieProps){
-    let movie = props.children
+    let movie = props.children;
+    let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+    function inputOnClick(){
+        setIsModalOpen(true);
+        // console.log(123);
+    }
+
+    useEffect(() => {console.log(12354)}, [isModalOpen]);
+
+    const modalContainerRef = useRef<HTMLDivElement>(null);
+
     return (
-        <div className='movie-info'>
+        <div className='movie-info' ref={modalContainerRef}>
             <div className="headlines">
                 <div className="movie-img-div">
                     <img className="movie-image" src={movie.previewSrc} alt={movie.name} />
@@ -25,11 +38,35 @@ export function MovieInfo(props: IMovieProps){
                         <button className="add-to-watchlist">+ Зберегти</button>
                     </div>
                     <div className="movie-shot">
-                        <img src={movie.shots} alt="shot"/>
+                        <img src={movie.shots} alt="shot" />
                     </div>
                     <div className="movie-rating"> 
-                        <p>⭐{movie.rating}/10</p>
+                        <p>⭐{Math.round(movie.rating * 10)/10}/10</p>
                     </div>
+                    <button className="rate-button" onClick={(event) => {event.stopPropagation(); inputOnClick()}}>⭐Оцінити</button>
+                    {   isModalOpen === true
+                            ?
+                            <Modal className="set-rating-modal" 
+                            allowModalCloseOutside={true}
+                            onClose={() => setIsModalOpen(false)}
+                            >
+                                <div className="rating-div">
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                    <StarFill></StarFill>
+                                </div>                     
+                            </Modal>
+                            :
+                            undefined
+                    }
+
                 </div>
             </div>
             <hr className="movie-hr1"/>

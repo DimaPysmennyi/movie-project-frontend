@@ -17,5 +17,6 @@ body{
     height: 100%;
     min-height: 100vh;
     background-color: #14181C;
-    justify-content: space-between
+    justify-content: space-between;
+    z-index: 1;
 }

@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 .popularFilms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #14181C;
     color: white;
     font-size: 30px;
-    margin: 75px 0 25px 0;
+    margin: 20px 0 0px 0;
+    padding-top: 20px;
+    border-top: 1px gray solid;
+
 }
 
 .popularFilms hr{
@@ -16,17 +23,8 @@
     display: flex;
     /* flex-direction: row; */
     justify-content: center;
+    flex-wrap: wrap;
     
-}
-
-.films img{
-    height: 360px;
-    width: 240px;
-    border-radius: 10px;
-}
-
-.films div{
-    margin: 30px 28px 40px 28px;
 }
 
 .popularFilms h2{
@@ -36,3 +34,6 @@
     margin-bottom: 15px;
 }
 
+.popular-card{
+    background-color: #CDCDCD;
+}

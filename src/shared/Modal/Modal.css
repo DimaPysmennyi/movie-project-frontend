@@ -1,0 +1,6 @@
+.modal{
+    position: absolute;
+    /* overflow: hidden; */
+    z-index: 999;
+    top: 0;
+}

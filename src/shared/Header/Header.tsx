@@ -10,7 +10,7 @@ export function Header(){
             <Link to={'/'}>Профіль</Link>
             <Link to={'/films'}>Фільми</Link>
             <Link to={'/'}>Списки перегляду</Link>
-            <input type="text" placeholder="Пошук..." />
+            <input className="search-input" type="text" placeholder="Пошук..." />
         </header>
     )
 }

@@ -30,7 +30,7 @@
     width: 100%;
     /* gap: 20px; */
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around
     /* justify-content: center; */
     /* flex-wrap: wrap; */
 }
@@ -124,4 +124,25 @@
 .movie-hr1{
     color: white;
     font-weight: 400;
+}
+
+.rate-button{
+    width: 250px;
+    height: 70px;
+    background-color: #5e5e5e;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.rate-button:hover{
+    opacity: 0.8;
+}
+
+.set-rating-modal{
+    width: 400px;
+    height: 600px;
 }
