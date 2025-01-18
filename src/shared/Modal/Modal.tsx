@@ -30,7 +30,7 @@ export function Modal(props: IModalProps){
 
     }, [])
 
-    const modalRef = useRef<HTMLDivElement>(null);
+    const modalRef = useRef<HTMLDivElement | null>(null);
     const classModal = "modal ";
     const classNames = classModal + className;
 

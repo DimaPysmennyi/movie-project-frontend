@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { IMovie } from "../../hooks/useMovies";
 import './MovieInfo.css';
+
 import { Modal } from "../Modal/Modal";
-import { StarFill } from "react-bootstrap-icons";
+import { StarRating } from "../StarRating/StarRating";
+
 
 interface IMovieProps{
     children: IMovie;
@@ -11,15 +13,15 @@ interface IMovieProps{
 export function MovieInfo(props: IMovieProps){
     let movie = props.children;
     let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    
 
     function inputOnClick(){
         setIsModalOpen(true);
-        // console.log(123);
     }
 
-    useEffect(() => {console.log(12354)}, [isModalOpen]);
 
     const modalContainerRef = useRef<HTMLDivElement>(null);
+
 
     return (
         <div className='movie-info' ref={modalContainerRef}>
@@ -50,18 +52,7 @@ export function MovieInfo(props: IMovieProps){
                             allowModalCloseOutside={true}
                             onClose={() => setIsModalOpen(false)}
                             >
-                                <div className="rating-div">
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                    <StarFill></StarFill>
-                                </div>                     
+                                <StarRating onSubmit={()=> setIsModalOpen(false)}></StarRating>              
                             </Modal>
                             :
                             undefined
