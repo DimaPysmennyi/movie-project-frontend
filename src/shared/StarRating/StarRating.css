@@ -1,0 +1,33 @@
+.modal-rate-button {
+    background-color: #333;
+    color: #bbb;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Roboto Condensed';
+    font-weight: 500;
+}
+  
+.modal-rate-button:hover {
+    background-color: #444;
+}
+  
+.modal-rate-button:active {
+    background-color: #555;
+}
+
+.rating-div{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.selected-star{
+    color: #FCD53F;
+}
