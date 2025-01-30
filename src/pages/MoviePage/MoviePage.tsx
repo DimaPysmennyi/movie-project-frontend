@@ -3,13 +3,42 @@ import { useMovieById } from "../../hooks/useMovieById";
 // import './MoviePage.css';
 import { MovieInfo } from "../../shared/MovieInfo/MovieInfo";
 import { Review } from "../../shared/Review/Review";
+import { useRecentlyViewedContext } from "../../context/recentlyViewedContext";
+import { useEffect } from "react";
 
 export function MoviePage(){
-    const params: any = useParams();
-    const {movie, error} = useMovieById(params.id);
+    const params = useParams();
+    const {movie, error} = useMovieById(Number(params.id));
+    const {recentlyViewed, addRecentlyViewed, updateRecentlyViewed, isRecentlyViewed} = useRecentlyViewedContext()
+
+    useEffect(() => {
+        function recentlyViewedHandler(){
+            if (!movie) {
+                return
+            }
+
+            if (isRecentlyViewed(movie.id)) {
+                return
+            }
+
+            if (recentlyViewed.length < 10){
+                addRecentlyViewed(movie)
+
+            }else{
+                updateRecentlyViewed(movie)
+            }
+
+        }
+        recentlyViewedHandler()
+    }, [movie]);
+    
+    useEffect(() => {
+        console.log(recentlyViewed)
+    },[recentlyViewed])
+
     if (movie != undefined){
         return (
-            <>
+            <div>
                 <MovieInfo children={movie}></MovieInfo>
                 <h2 className="user-reviews">Відгуки користувачів</h2>
                 <div className="movie-reviews">
@@ -22,7 +51,7 @@ export function MoviePage(){
                         + Додати відгук
                     </button>
                 </Link>
-            </>
+            </div>
         )
     } else{
         return(

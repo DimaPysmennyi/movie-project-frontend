@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { IMovie } from "../../hooks/useMovies";
 import './FilmCard.css';
 
 interface IMovieCard {

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './FilmsPage.css';
-import { Link } from 'react-router-dom';
 import { IMovie } from '../../hooks/useMovies';
 import { useMovies } from '../../hooks/useMovies';
 import { Oval } from 'react-loader-spinner';
@@ -11,7 +10,6 @@ export function FilmsPage(){
     const {movies, isLoading, error} = useMovies();
     const {genres} = useGenres();
     const [filteredMovies, setFilteredMovies] = useState(movies);
-    // const [genres, setGenres] = useState<IGenre[]>([]);
     const [selectedGenre, setSelectedGenre] = useState('All');
 
     // setFilteredMovies({movies})
@@ -34,9 +32,6 @@ export function FilmsPage(){
         console.log(selectedGenre);
     }, [selectedGenre])
 
-    // console.log(filteredMovies);
-    console.log(genres);
-    
     return (
         <div className='films-page'>
             <div className="text">
