@@ -5,33 +5,64 @@ import { useMovies } from '../../hooks/useMovies';
 import { Oval } from 'react-loader-spinner';
 import { IGenre, useGenres } from '../../hooks/useGenres';
 import { FilmCard } from '../../shared/FilmCard/FilmCard';
+import { Modal } from '../../shared/Modal/Modal';
 
 export function FilmsPage(){
     const {movies, isLoading, error} = useMovies();
     const {genres} = useGenres();
     const [filteredMovies, setFilteredMovies] = useState(movies);
-    const [selectedGenre, setSelectedGenre] = useState('All');
+    const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+    let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     // setFilteredMovies({movies})
 
+    function inputOnClick(){
+        setIsModalOpen(true);
+    }
+    
     useEffect(() => {
         setFilteredMovies(movies);
-    }, [movies])    
+    }, [movies])
+    
+    function addSelectedGenre(genre: string){
+        let genres = [...selectedGenres, genre]
+        if (!isGenreSelected(genre)){
+            setSelectedGenres(genres);
+            return;
+        }
+        removeSelectedGenre(genre);
+    }
+    
+    function isGenreSelected(name: string){
+        return selectedGenres.some(genre => name === genre)
+    }
+
+    function removeSelectedGenre(name:string) {
+        let array = selectedGenres.filter((genre) => {
+            return genre != name
+        })
+        setSelectedGenres(array)
+    }
 
     useEffect(() => {
-        if (selectedGenre === "All"){
+        if (selectedGenres.length === 0){
             setFilteredMovies(movies);
-        } else {
-            setFilteredMovies(movies.filter((movie)=> {
+        } else{
+            let newMovies = filteredMovies;
+            setFilteredMovies(filteredMovies.concat(newMovies.filter((movie) => {
+                console.log(movie);
                 for (let genre of movie.genres){
-                    return selectedGenre === genre.genreName; 
+                    return selectedGenres.includes(genre.genreName);
                 }
-
-            }))
+            })))
+            
         }
-        console.log(selectedGenre);
-    }, [selectedGenre])
+        console.log(selectedGenres);
+    }, [selectedGenres])
 
+    useEffect(() => console.log(filteredMovies), [filteredMovies])
+
+    // console.log(selectedGenres);
     return (
         <div className='films-page'>
             <div className="text">
@@ -41,16 +72,25 @@ export function FilmsPage(){
 
             <div className='films-list'>
                 <div className='select-genre'>
-                    <select onChange={(event)=>{
-                        setSelectedGenre(event.target.value)
-                        }}>
-                        <option value="All">All</option>
-                        {genres.map((genre) => {
-                            return (
-                                <option key={genre.id} value={genre.name}>{genre.name}</option>
-                            )
-                        })}
-                    </select>
+                    <button onClick={(event) => {event.stopPropagation(); inputOnClick()}}>Filters</button>
+                    {   isModalOpen === true
+                            ?
+                            <Modal className="filters-modal" 
+                            allowModalCloseOutside={true}
+                            onClose={() => setIsModalOpen(false)}
+                            >
+                            <h3>Genres</h3> 
+                            <div>
+                                {genres.map((genre) => {
+                                    return <button type="button" className='filter-button' value={genre.name} onClick={(event: any)=>{addSelectedGenre(event.target.value)}}>{genre.name}</button>
+                                })} 
+
+                            </div>
+                            </Modal>
+                            
+                            :
+                            undefined
+                    }
                 </div>
 
                 <div className='selected-films'>
