@@ -50,17 +50,17 @@ export function FilmsPage(){
         } else{
             let newMovies = filteredMovies;
             setFilteredMovies(filteredMovies.concat(newMovies.filter((movie) => {
-                console.log(movie);
+                // console.log(movie);
                 for (let genre of movie.genres){
                     return selectedGenres.includes(genre.genreName);
                 }
             })))
             
         }
-        console.log(selectedGenres);
+        // console.log(selectedGenres);
     }, [selectedGenres])
 
-    useEffect(() => console.log(filteredMovies), [filteredMovies])
+    // useEffect(() => console.log(filteredMovies), [filteredMovies])
 
     // console.log(selectedGenres);
     return (

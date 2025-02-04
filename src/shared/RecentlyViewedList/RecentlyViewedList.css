@@ -1,0 +1,35 @@
+.recently-viewed-div{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+
+.recently-viewed-text h1{
+    color: #D0F3FF;
+    font-size: 48px;
+    
+}
+
+.recently-viewed-text h2{
+    color: #FFFFFF;
+    font-size: 40px;
+    border-left: 4px solid white;
+    padding-left: 10px;
+}
+
+.recently-viewed-list{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    max-width: 100%;
+    
+}
+
+.recently-viewed-container{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
