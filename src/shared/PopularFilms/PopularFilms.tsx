@@ -12,7 +12,7 @@ export function PopularFilms() {
 
     return (
         <div className="popularFilms">
-            <h2>|Популярні фільми</h2>
+            <h2>| Популярні фільми</h2>
             <div className='films'>
                 {movie1 && <FilmCard className='popular-card' {...movie1} />}
                 {movie2 && <FilmCard className='popular-card' {...movie2} />}
