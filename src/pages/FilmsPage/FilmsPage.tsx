@@ -61,9 +61,10 @@ export function FilmsPage(){
             console.log(newMovies);
             setFilteredMovies(newMovies);
         }
-        console.log(selectedGenres);
+        // console.log(selectedGenres);
     }, [selectedGenres])
 
+    // useEffect(() => console.log(filteredMovies), [filteredMovies])
     // useEffect(() => console.log(filteredMovies), [filteredMovies])
 
     // console.log(selectedGenres);
