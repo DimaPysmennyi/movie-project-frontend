@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './FilmsPage.css';
-import { IMovie } from '../../hooks/useMovies';
 import { useMovies } from '../../hooks/useMovies';
 import { Oval } from 'react-loader-spinner';
 import { IGenre, useGenres } from '../../hooks/useGenres';
@@ -11,7 +10,7 @@ export function FilmsPage(){
     const {movies, isLoading, error} = useMovies();
     const {genres} = useGenres();
     const [filteredMovies, setFilteredMovies] = useState(movies);
-    const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+    const [selectedGenres, setSelectedGenres] = useState<IGenre[]>([]);
     let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     // setFilteredMovies({movies})
@@ -24,7 +23,7 @@ export function FilmsPage(){
         setFilteredMovies(movies);
     }, [movies])
     
-    function addSelectedGenre(genre: string){
+    function addSelectedGenre(genre: IGenre){
         let genres = [...selectedGenres, genre]
         if (!isGenreSelected(genre)){
             setSelectedGenres(genres);
@@ -33,34 +32,39 @@ export function FilmsPage(){
         removeSelectedGenre(genre);
     }
     
-    function isGenreSelected(name: string){
-        return selectedGenres.some(genre => name === genre)
+    function isGenreSelected(genreToCheck: IGenre){
+        return selectedGenres.some(genre => genre.name === genreToCheck.name)
     }
 
-    function removeSelectedGenre(name:string) {
+    function removeSelectedGenre(genreToCheck: IGenre) {
         let array = selectedGenres.filter((genre) => {
-            return genre != name
+            return genre.name != genreToCheck.name
         })
         setSelectedGenres(array)
+    }
+    
+    function isSubset(){
+        let movies = filteredMovies.filter((movie) => {
+            // console.log(movie);
+            return selectedGenres.every(value => movie.genres.filter((genre) => {
+                return genre.genreId === value.id;
+            }));
+        })
+        return movies;
     }
 
     useEffect(() => {
         if (selectedGenres.length === 0){
             setFilteredMovies(movies);
         } else{
-            let newMovies = filteredMovies;
-            setFilteredMovies(filteredMovies.concat(newMovies.filter((movie) => {
-                console.log(movie);
-                for (let genre of movie.genres){
-                    return selectedGenres.includes(genre.genreName);
-                }
-            })))
-            
+            let newMovies = isSubset();
+            console.log(newMovies);
+            setFilteredMovies(newMovies);
         }
         console.log(selectedGenres);
     }, [selectedGenres])
 
-    useEffect(() => console.log(filteredMovies), [filteredMovies])
+    // useEffect(() => console.log(filteredMovies), [filteredMovies])
 
     // console.log(selectedGenres);
     return (
@@ -82,7 +86,7 @@ export function FilmsPage(){
                             <h3>Genres</h3> 
                             <div>
                                 {genres.map((genre) => {
-                                    return <button type="button" className='filter-button' value={genre.name} onClick={(event: any)=>{addSelectedGenre(event.target.value)}}>{genre.name}</button>
+                                    return <button type="button" className='filter-button' onClick={()=>{addSelectedGenre(genre);}}>{genre.name}</button>
                                 })} 
 
                             </div>

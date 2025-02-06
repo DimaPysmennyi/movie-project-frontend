@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { IMovie } from "../../hooks/useMovies";
 import './MovieInfo.css';
-
 import { Modal } from "../Modal/Modal";
 import { StarRating } from "../StarRating/StarRating";
 
