@@ -10,8 +10,9 @@ export function PopularReviews(){
     if (movie != undefined){
         return (
             <div className='popularReviews'>
-                <h2>Популярні відгуки</h2>
-                <hr color='gray'/>
+                <hr />
+                <h2>| Популярні відгуки</h2>
+                
                 <div className='reviews'>
                     {movie?.reviews.map((review) => {
                         return (
