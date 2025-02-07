@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './FilmsPage.css';
 import { useMovies } from '../../hooks/useMovies';
 import { Oval } from 'react-loader-spinner';
-import { IGenre, useGenres } from '../../hooks/useGenres';
+import { useGenres } from '../../hooks/useGenres';
 import { FilmCard } from '../../shared/FilmCard/FilmCard';
 import { Modal } from '../../shared/Modal/Modal';
 

@@ -3,8 +3,7 @@
 .popularFilms{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #14181C;
     color: white;
     font-size: 30px;
@@ -17,21 +16,24 @@
 .popularFilms hr{
     color: #CDCDCD;
     margin: 0px;
+    height :20px
 }
 
 .films{
     display: flex;
     /* flex-direction: row; */
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    margin-left: 55px;
     
 }
 
 .popularFilms h2{
-    text-align: center;
     font-family: 'Roboto Condensed';
     font-weight: 400;
     margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: 45px;
 }
 
 .popular-card{

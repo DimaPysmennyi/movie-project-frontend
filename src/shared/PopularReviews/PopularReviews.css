@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 .popularReviews h2{
-    text-align: center;
     color: white;
     font-family: 'Roboto Condensed';
-    font-weight: 400;
+    font-weight: 400;    
+    margin-right: auto;
+    margin-left: 45px;
+    margin-top: 15px;
 }
 
 .popularReviews{
-    margin: 50px 0 0 0;
-    padding: 0 20px;
+    margin: 10px 0 0 0;
+   
 }
 
 .popularReviews hr{
-    color: #CDCDCD;
     margin: 0px;
+    border-bottom: 1px solid #dbdada;
 }
 
 .reviews{
@@ -38,7 +40,7 @@
 .reviewImg{
     width: 240px;
     height: 360px;
-    border-radius: 10px;
+    
 }
 
 .reviewText{
