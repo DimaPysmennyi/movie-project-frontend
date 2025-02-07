@@ -5,6 +5,7 @@ import { Oval } from 'react-loader-spinner';
 import { useGenres } from '../../hooks/useGenres';
 import { FilmCard } from '../../shared/FilmCard/FilmCard';
 import { Modal } from '../../shared/Modal/Modal';
+import { LuListFilter } from "react-icons/lu";
 
 export function FilmsPage(){
     const {movies, isLoading, error} = useMovies();
@@ -52,19 +53,24 @@ export function FilmsPage(){
 
             <div className='films-list'>
                 <div className='select-genre'>
-                    <button onClick={(event) => {event.stopPropagation(); inputOnClick()}}>Filters</button>
+                    <button onClick={(event) => {event.stopPropagation(); inputOnClick()}} className='filter-modal-button'>
+                        <LuListFilter size={50} color='white' />
+                    </button>
                     {   isModalOpen === true
                             ?
                             <Modal className="filters-modal" 
                             allowModalCloseOutside={true}
                             onClose={() => setIsModalOpen(false)}
                             >
-                            <h3>Genres</h3> 
-                            <div>
+                            <h2>Жанри</h2> 
+                            <div className='filter-buttons'>
                                 {genres.map((genre) => {
-                                    return <button type="button" key = {genre.id} className='filter-button' value={genre.name} onClick={()=>{toggleGenreSelection(genre.name)}}>{genre.name}</button>
+                                    return <button type="button"
+                                    key = {genre.id}
+                                    className={`filter-button ${selectedGenres.includes(genre.name) ? 'active' : ''}`}
+                                    onClick={()=>{toggleGenreSelection(genre.name)}}>{genre.name}</button>
                                 })} 
-
+                                
                             </div>
                             </Modal>
                             
