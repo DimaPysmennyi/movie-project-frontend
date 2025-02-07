@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './FilmsPage.css';
-import { IMovie } from '../../hooks/useMovies';
 import { useMovies } from '../../hooks/useMovies';
 import { Oval } from 'react-loader-spinner';
 import { IGenre, useGenres } from '../../hooks/useGenres';
@@ -14,55 +13,36 @@ export function FilmsPage(){
     const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
     let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-    // setFilteredMovies({movies})
-
     function inputOnClick(){
         setIsModalOpen(true);
     }
     
     useEffect(() => {
-        setFilteredMovies(movies);
-    }, [movies])
+        console.log(selectedGenres);
+    }, [selectedGenres])
     
-    function addSelectedGenre(genre: string){
-        let genres = [...selectedGenres, genre]
-        if (!isGenreSelected(genre)){
-            setSelectedGenres(genres);
-            return;
+    function toggleGenreSelection(genre: string) {
+        setSelectedGenres((prevGenres) => {
+            if (prevGenres.includes(genre)){
+                return prevGenres.filter((prevGenre) => prevGenre !== genre);
+            }else{
+                return [...prevGenres, genre];
+            }
         }
-        removeSelectedGenre(genre);
-    }
-    
-    function isGenreSelected(name: string){
-        return selectedGenres.some(genre => name === genre)
-    }
-
-    function removeSelectedGenre(name:string) {
-        let array = selectedGenres.filter((genre) => {
-            return genre != name
-        })
-        setSelectedGenres(array)
+        );
     }
 
     useEffect(() => {
-        if (selectedGenres.length === 0){
+        if (selectedGenres.length === 0) {
             setFilteredMovies(movies);
-        } else{
-            let newMovies = filteredMovies;
-            setFilteredMovies(filteredMovies.concat(newMovies.filter((movie) => {
-                // console.log(movie);
-                for (let genre of movie.genres){
-                    return selectedGenres.includes(genre.genreName);
-                }
-            })))
-            
+        } else {
+            let newMovies = movies.filter((movie) => {
+                return movie.genres.some((genre) => selectedGenres.includes(genre.genreName))
+            })
+            setFilteredMovies(newMovies) 
         }
-        // console.log(selectedGenres);
-    }, [selectedGenres])
+    }, [selectedGenres, movies]);
 
-    // useEffect(() => console.log(filteredMovies), [filteredMovies])
-
-    // console.log(selectedGenres);
     return (
         <div className='films-page'>
             <div className="text">
@@ -82,7 +62,7 @@ export function FilmsPage(){
                             <h3>Genres</h3> 
                             <div>
                                 {genres.map((genre) => {
-                                    return <button type="button" className='filter-button' value={genre.name} onClick={(event: any)=>{addSelectedGenre(event.target.value)}}>{genre.name}</button>
+                                    return <button type="button" key = {genre.id} className='filter-button' value={genre.name} onClick={()=>{toggleGenreSelection(genre.name)}}>{genre.name}</button>
                                 })} 
 
                             </div>
