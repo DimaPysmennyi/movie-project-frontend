@@ -3,6 +3,7 @@ import { IMovie } from "../../hooks/useMovies";
 import './MovieInfo.css';
 import { Modal } from "../Modal/Modal";
 import { StarRating } from "../StarRating/StarRating";
+import { FaStar } from "react-icons/fa";
 
 
 interface IMovieProps{
@@ -42,9 +43,9 @@ export function MovieInfo(props: IMovieProps){
                         <img src={movie.shots} alt="shot" />
                     </div>
                     <div className="movie-rating"> 
-                        <p>⭐{Math.round(movie.rating * 10)/10}/10</p>
+                        <p><FaStar className="star" size="30" color="#FCD53F"></FaStar> {Math.round(movie.rating * 10)/10}/10</p>
                     </div>
-                    <button className="rate-button" onClick={(event) => {event.stopPropagation(); inputOnClick()}}>⭐Оцінити</button>
+                    <button className="rate-button" onClick={(event) => {event.stopPropagation(); inputOnClick()}}><FaStar className="star" size="24" color="#FCD53F"></FaStar> Оцінити</button>
                     {   isModalOpen === true
                             ?
                             <Modal className="set-rating-modal" 

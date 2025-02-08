@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 import './FilmCard.css';
 
 interface IMovieCard {
@@ -31,7 +32,7 @@ export function FilmCard(props: IMovieCard){
                 </div>
                 <div className='film-info'>
                     <p>{props.name}</p>
-                    <p>⭐{Math.round(props.rating * 10) / 10}/10</p>
+                    <p><FaStar className="star" size="20" color="#FCD53F"></FaStar> {Math.round(props.rating * 10) / 10}/10</p>
                 </div>
             </div>
         </Link>

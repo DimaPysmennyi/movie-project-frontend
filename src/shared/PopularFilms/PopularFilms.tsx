@@ -12,13 +12,15 @@ export function PopularFilms() {
 
     return (
         <div className="popularFilms">
-            <h2>| Популярні фільми</h2>
-            <div className='films'>
-                {movie1 && <FilmCard className='popular-card' {...movie1} />}
-                {movie2 && <FilmCard className='popular-card' {...movie2} />}
-                {movie3 && <FilmCard className='popular-card' {...movie3} />}
-                {movie4 && <FilmCard className='popular-card' {...movie4} />}
-                {movie5 && <FilmCard className='popular-card' {...movie5} />}
+            <div className="popular-films-div">
+                <h2>Популярні фільми</h2>
+                <div className='films'>
+                    {movie1 && <FilmCard className='popular-card' {...movie1} />}
+                    {movie2 && <FilmCard className='popular-card' {...movie2} />}
+                    {movie3 && <FilmCard className='popular-card' {...movie3} />}
+                    {movie4 && <FilmCard className='popular-card' {...movie4} />}
+                    {movie5 && <FilmCard className='popular-card' {...movie5} />}
+                </div>
             </div>
         </div>
     );

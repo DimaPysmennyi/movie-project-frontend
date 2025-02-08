@@ -1,3 +1,4 @@
+import { FaStar } from 'react-icons/fa';
 import './Review.css';
 import { HandThumbsUp, HandThumbsDown, Controller } from "react-bootstrap-icons";
 
@@ -15,7 +16,7 @@ export function Review(props: IReviewProps){
         <div className='review'>
             <div className = 'review-header'>
                 <div className = 'title'>{props.title}</div>
-                <div className = 'rate'>⭐ {props.rate}/10 </div>
+                <div className = 'rate'><FaStar className='star' size="20" color="#FCD53F"/> {props.rate}/10 </div>
             </div>
             <div className = 'review-body'>
                 <p className='review-text'>{props.text}</p>

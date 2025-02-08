@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 .popularReviews h2{
     color: white;
     font-family: 'Roboto Condensed';
-    font-weight: 400;    
-    margin-right: auto;
-    margin-left: 45px;
+    font-weight: 500;    
     margin-top: 15px;
+    font-size: 40px;
+    padding-left: 10px;
+    border-left: 4px solid white;
+}
+
+.popular-reviews-div{
+    display: flex;
+    width: 95%;
+    flex-direction: column;
 }
 
 .popularReviews{
-    margin: 10px 0 0 0;
-   
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .popularReviews hr{
     margin: 0px;
     border-bottom: 1px solid #dbdada;
+}
+
+.review{
+    width: 100%;
 }
 
 .reviews{
@@ -30,9 +43,9 @@
     gap: 10px;
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 2px solid #515151;
+    /* border-bottom: 2px solid #515151; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     justify-items: center;
     
 }
