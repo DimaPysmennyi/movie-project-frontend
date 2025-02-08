@@ -2,72 +2,48 @@ import { useEffect, useState } from 'react';
 import './FilmsPage.css';
 import { useMovies } from '../../hooks/useMovies';
 import { Oval } from 'react-loader-spinner';
-import { IGenre, useGenres } from '../../hooks/useGenres';
+import { useGenres } from '../../hooks/useGenres';
 import { FilmCard } from '../../shared/FilmCard/FilmCard';
 import { Modal } from '../../shared/Modal/Modal';
+import { LuListFilter } from "react-icons/lu";
 
 export function FilmsPage(){
     const {movies, isLoading, error} = useMovies();
     const {genres} = useGenres();
     const [filteredMovies, setFilteredMovies] = useState(movies);
-    const [selectedGenres, setSelectedGenres] = useState<IGenre[]>([]);
+    const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
     let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-    // setFilteredMovies({movies})
 
     function inputOnClick(){
         setIsModalOpen(true);
     }
     
     useEffect(() => {
-        setFilteredMovies(movies);
-    }, [movies])
+        console.log(selectedGenres);
+    }, [selectedGenres])
     
-    function addSelectedGenre(genre: IGenre){
-        let genres = [...selectedGenres, genre]
-        if (!isGenreSelected(genre)){
-            setSelectedGenres(genres);
-            return;
+    function toggleGenreSelection(genre: string) {
+        setSelectedGenres((prevGenres) => {
+            if (prevGenres.includes(genre)){
+                return prevGenres.filter((prevGenre) => prevGenre !== genre);
+            }else{
+                return [...prevGenres, genre];
+            }
         }
-        removeSelectedGenre(genre);
-    }
-    
-    function isGenreSelected(genreToCheck: IGenre){
-        return selectedGenres.some(genre => genre.name === genreToCheck.name)
-    }
-
-    function removeSelectedGenre(genreToCheck: IGenre) {
-        let array = selectedGenres.filter((genre) => {
-            return genre.name != genreToCheck.name
-        })
-        setSelectedGenres(array)
-    }
-    
-    function isSubset(){
-        let movies = filteredMovies.filter((movie) => {
-            // console.log(movie);
-            return selectedGenres.every(value => movie.genres.filter((genre) => {
-                return genre.genreId === value.id;
-            }));
-        })
-        return movies;
+        );
     }
 
     useEffect(() => {
-        if (selectedGenres.length === 0){
+        if (selectedGenres.length === 0) {
             setFilteredMovies(movies);
-        } else{
-            let newMovies = isSubset();
-            console.log(newMovies);
-            setFilteredMovies(newMovies);
+        } else {
+            let newMovies = movies.filter((movie) => {
+                return movie.genres.some((genre) => selectedGenres.includes(genre.genreName))
+            })
+            setFilteredMovies(newMovies) 
         }
-        // console.log(selectedGenres);
-    }, [selectedGenres])
+    }, [selectedGenres, movies]);
 
-    // useEffect(() => console.log(filteredMovies), [filteredMovies])
-    // useEffect(() => console.log(filteredMovies), [filteredMovies])
-
-    // console.log(selectedGenres);
     return (
         <div className='films-page'>
             <div className="text">
@@ -77,19 +53,24 @@ export function FilmsPage(){
 
             <div className='films-list'>
                 <div className='select-genre'>
-                    <button onClick={(event) => {event.stopPropagation(); inputOnClick()}}>Filters</button>
+                    <button onClick={(event) => {event.stopPropagation(); inputOnClick()}} className='filter-modal-button'>
+                        <LuListFilter size={50} color='white' />
+                    </button>
                     {   isModalOpen === true
                             ?
                             <Modal className="filters-modal" 
                             allowModalCloseOutside={true}
                             onClose={() => setIsModalOpen(false)}
                             >
-                            <h3>Genres</h3> 
-                            <div>
+                            <h2>Жанри</h2> 
+                            <div className='filter-buttons'>
                                 {genres.map((genre) => {
-                                    return <button type="button" className='filter-button' onClick={()=>{addSelectedGenre(genre);}}>{genre.name}</button>
+                                    return <button type="button"
+                                    key = {genre.id}
+                                    className={`filter-button ${selectedGenres.includes(genre.name) ? 'active' : ''}`}
+                                    onClick={()=>{toggleGenreSelection(genre.name)}}>{genre.name}</button>
                                 })} 
-
+                                
                             </div>
                             </Modal>
                             

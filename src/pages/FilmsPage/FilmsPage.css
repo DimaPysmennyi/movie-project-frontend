@@ -70,28 +70,77 @@
 
 .filters-modal{
     width: 500px;
-    height: 300px;
+    min-height: 200px;
+    height: auto;
     top: 50%;
     left: 50%;
     background-color: #1F1F1F;
     transform: translate(-50%, -50%);
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 15px;
+    padding: 15px 0 20px 0;
     flex-direction: column;
+    
 }
 
-.filters-modal h3{
+.filters-modal h2{
     color: white;
+    margin: 5px 0 15px 0;
     text-align: center;
 }
 
-.filters-modal div{
+.filter-buttons{
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .filter-button{
     width: 100px;
     height: 50px;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.filter-button.active{
+    background-color: #FCD53F;
+    color: black;
+    border: none;
+}
+
+.filter-button:hover {
+    transform: scale(1.1);
+    opacity: 80%;
+}
+
+.filter-button:active{
+    background-color: #fcd127;
+    color: black;
+    border: none;
+}
+
+.filter-modal-button{
+    margin: 20px 0 10px 0;
+    width: 100px;
+    height: 60px;
+    border: none;
+    background-color: #565bfc;
+    padding: 5px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.filter-modal-button:hover{
+    background-color: #6166f8;
+}
+
+.filter-modal-button:active{
+    background-color: #4f54ff;
 }
