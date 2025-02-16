@@ -40,15 +40,8 @@ header a:hover{
     background-position: 95%;
 }
 
-input:focus{
+.search-input:focus{
     transition: all 0.3s ease;
     opacity: 50%;
     border: 1px solid black;
-}
-
-img{
-    width: 150px;
-    height: 150px;
-    
-    /* margin-right: none; */
 }

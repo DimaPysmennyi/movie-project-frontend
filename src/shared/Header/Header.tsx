@@ -5,8 +5,11 @@ import './Header.css';
 
 export function Header(){
     return (
-        <header>    
-            <Link to={'/'}>PopcornHeaven</Link>
+        <header>   
+            <Link to={'/'}>
+                <img src="/image 1.png" alt="" />
+                PopcornHeaven
+            </Link>
             <Link to={'/'}>Профіль</Link>
             <Link to={'/films'}>Фільми</Link>
             <Link to={'/'}>Списки перегляду</Link>

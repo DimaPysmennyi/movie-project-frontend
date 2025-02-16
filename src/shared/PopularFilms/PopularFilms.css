@@ -28,9 +28,7 @@
 .films{
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
-
-    
+    flex-wrap: wrap;    
 }
 
 .popular-films-div h2{
@@ -38,11 +36,5 @@
     font-size: 40px;
     font-weight: 500;
     padding-left: 10px;
-    border-left: 4px solid white;
-
-    
-}
-
-.popular-card{
-    background-color: #CDCDCD;
+    border-left: 4px solid white;   
 }

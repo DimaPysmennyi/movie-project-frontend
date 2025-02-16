@@ -1,6 +1,6 @@
 .modal{
     position: absolute;
-    /* overflow: hidden; */
+    overflow: hidden;
     z-index: 999;
     display: flex;
 }

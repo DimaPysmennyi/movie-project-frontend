@@ -1,0 +1,44 @@
+.actor-div{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding: 25px;
+}
+
+.actor-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.actor-info img{
+    width: 260px;
+    height: auto;
+}
+
+.actor-info-text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 260px;
+    height: 400px;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #A4A4A4;
+    color: white;
+}
+
+.actor-secondary-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.actor-movies{
+    display: flex;
+    justify-content: center;
+}

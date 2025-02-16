@@ -68,8 +68,8 @@ export function MovieInfo(props: IMovieProps){
                     <label className="bold-text">Жанри:&nbsp;</label> 
                     
                     {movie.genres.map((genre) => {
-                        if (movie.genres.length > 1){
-                            return `${genre.genreName},`;
+                        if (movie.genres[movie.genres.length-1] !== genre){
+                            return `${genre.genreName}, `;
                         } 
                         return genre.genreName;
                     })}
@@ -78,8 +78,8 @@ export function MovieInfo(props: IMovieProps){
                 <h3 className="movie-actors">
                     <label className="bold-text">Актори:&nbsp;</label> 
                     {movie.actors.map((actor) => {
-                        if (movie.actors.length > 1){
-                            return `${actor.actorName},`;
+                        if (movie.actors[movie.actors.length-1] !== actor){
+                            return `${actor.actorName}, `;
                         }
                         return actor.actorName;
                     })}

@@ -78,8 +78,7 @@
     transform: translate(-50%, -50%);
     border-radius: 15px;
     padding: 15px 0 20px 0;
-    flex-direction: column;
-    
+    flex-direction: column;    
 }
 
 .filters-modal h2{
