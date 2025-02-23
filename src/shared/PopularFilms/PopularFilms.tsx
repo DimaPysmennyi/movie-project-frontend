@@ -3,11 +3,11 @@ import { FilmCard } from '../FilmCard/FilmCard';
 import { useMovieById } from '../../hooks/useMovieById';
 
 export function PopularFilms() {
-    const movie1 = useMovieById(1).movie;
-    const movie2 = useMovieById(2).movie;
-    const movie3 = useMovieById(3).movie;
-    const movie4 = useMovieById(4).movie;
-    const movie5 = useMovieById(5).movie;
+    const movie1 = useMovieById(5).movie;
+    const movie2 = useMovieById(6).movie;
+    const movie3 = useMovieById(7).movie;
+    const movie4 = useMovieById(8).movie;
+    const movie5 = useMovieById(9).movie;
     
 
     return (

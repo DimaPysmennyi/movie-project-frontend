@@ -29,12 +29,12 @@ export function ActorPage(){
                         <p>{actor.name}</p>
                         <p>{actor.birthdate}</p>
                         <p>{actor.country}</p>
-                        <p>{actor.movieCount} movies</p>
+                        <p>{actor.movieCount} movie</p>
                         <p>{actor.awards}</p>
                     </div>
                 </div>
                 <div className="actor-secondary-info">
-                    <h2>{actor.name}</h2>
+                    <h2>{actor.description}</h2>
                     <hr />
                     <h2>Фільми актора</h2>
                     <div className="actor-movies">

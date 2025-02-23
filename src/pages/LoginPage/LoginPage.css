@@ -9,9 +9,9 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 640px;
-    height: 560px;
-    border: 1px solid #787878;
+    width: 460px;
+    height: 500px;
+    border: 2px solid #787878;
     padding: 30px 10px;
     border-radius: 10px;
     gap: 20px;
@@ -20,15 +20,15 @@
 .login-inputs{
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid #787878;
+    border-bottom: 2px solid rgba(164, 164, 164, 1) ;
     gap: 40px;
     padding: 10px;
     align-items: center;
 }
     
 .login-btn{
-    width: 350px;
-    height: 80px;
+    width: 250px;
+    height: 60px;
     background-color: #1E3E4D;
     font-size: 32px;
     color: white;
@@ -36,39 +36,37 @@
     border: none;
     border-radius: 10px;
     margin-bottom:15px;
+    transition: all 0.2s ease;
 }
 
+.login-btn:hover{
+    background-color: #2e5466;
+}
 
-
-.login-form h1{
+.login-form h2{
     color: white;
-    font-size:48px;
-    font-weight: 400;
+    font-size: 40px;
     margin: 10px;
 }
 
 .login-form p{
     color: white;
-    font-size:36px;
+    font-size: 24px;
     text-decoration: none;
 }
 
 .login-form p a{
     font-weight: 500;
-    text-decoration: none;
 }
 
 .login-inputs input{
-    width: 500px;
-    height:70px;
+    width: 400px;
+    height: 60px;
     border-radius: 15px;
     border: 2px solid rgba(120, 120, 120, 1);
     background: none;
-    font-size: 32px;
+    font-size: 24px;
     color: white;
     padding: 15px;
-}
-
-.login-inputs input::placeholder{
-    padding: 15px;
+    transition: all 0.2s ease;
 }

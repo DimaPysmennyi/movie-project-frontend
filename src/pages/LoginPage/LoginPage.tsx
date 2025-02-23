@@ -5,7 +5,7 @@ export function LoginPage() {
     return (
         <div className="login-page">
             <div className="login-form">
-                <h1>Вхід</h1>
+                <h2>Вхід</h2>
                 <div className="login-inputs">
                     <input type="text" placeholder="Електронна пошта" required/>
                     <input type="password" placeholder="Пароль" required/>

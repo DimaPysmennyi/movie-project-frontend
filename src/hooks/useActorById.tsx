@@ -14,6 +14,7 @@ interface IActor{
     awards: string,
     src: string,
     movieCount: number,
+    description: string,
     movies: IActorMovie[],
 }
 

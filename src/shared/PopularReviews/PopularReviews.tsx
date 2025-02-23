@@ -6,7 +6,7 @@ import './PopularReviews.css'
 
 
 export function PopularReviews(){
-    const{movie,error} = useMovieById(1)
+    const{movie,error} = useMovieById(5)
     if (movie != undefined){
         return (
             <div className='popularReviews'>

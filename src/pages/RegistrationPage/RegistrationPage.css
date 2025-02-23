@@ -1,47 +1,52 @@
-.maindiv{
+.reg-page{
     height: 80vh;
     display: flex;
     align-items: center;
     justify-self: center;
 }
 
-.Info-div{
+.reg-form{
+    display: flex;
     flex-direction: column;
+    text-align: center;
     width: 460px;
     height: 620px;
     border-radius: 10px;
-    border: 2px solid rgba(164, 164, 164, 1); 
-    align-items: center;
-    display: flex;
-    align-items: center;
-    justify-self: center;
+    border: 2px solid #787878; 
     justify-content: center;
-
+    gap: 20px;
+    padding: 30px 10px;
 }
-.Inputs-and-button{
+.registration-inputs{
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-bottom: 2px solid rgba(164, 164, 164, 1);
-    width: 420px;
-    
-
+    align-items: center;
+    gap: 20px;
 }
+
 .dop-info{
-    color: white;
-    margin-top: 20px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.inputreg{
+
+.reg-form p{
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.registration-inputs input{
     width: 400px;
-    height:60px ;
+    height: 60px;
     border-radius: 15px;
     border: 2px solid rgba(120, 120, 120, 1);
     background: none;
-    margin-bottom: 20px;
     font-size: 24px;
     color: white;
-    padding-left: 10px;
+    padding: 15px;
+    transition: all 0.2s ease;
 }
 
 
@@ -55,9 +60,15 @@
     border: none;
     border-radius: 10px;
     margin-bottom: 20px;
+    transition: all 0.2s ease;
 }
 
-.h2-r{
+.registration-btn:hover{
+    background-color: #2e5466;
+}
+
+.reg-form h2{
     color: white;
-    margin-bottom: 40px;
+    font-size: 40px;
+    margin: 10px;
 }
