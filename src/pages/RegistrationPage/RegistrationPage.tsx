@@ -13,18 +13,17 @@ interface IForm{
 
 export function RegistrationPage(){
     let [response, setResponse] = useState();
-    let [safeToReset, setSafeToReset] = useState(false);
-    const {register: register, watch, handleSubmit, resetField, formState} = useForm<IForm>({
+    const {register: register, watch, handleSubmit, formState} = useForm<IForm>({
         mode: 'onSubmit'
     })
 
-    async function onSubmit(){
+    async function onSubmit(data: IForm){
         let response = await fetch('http://localhost:8000/user/registration', {
             method: 'POST',
             body: JSON.stringify({
-                name: watch("name"),
-                email: watch("email"),
-                password: watch("password"),
+                name: data.name,
+                email: data.email,
+                password: data.password,
             }),
             headers: {
                 'Content-Type': 'application/json'
