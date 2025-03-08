@@ -8,6 +8,7 @@ import { RegistrationPage } from '../pages/RegistrationPage/RegistrationPage'
 import { RecentlyViewedContextProvider } from '../context/recentlyViewedContext'
 import { AppRoutes } from '../routes/Routes'
 import { ActorPage } from '../pages/ActorPage/ActorPage'
+import { AdminGenre } from '../pages/AdminGenre/AdminGenre'
 export function App(){
     return (
         <div>
@@ -21,6 +22,7 @@ export function App(){
                             <Route path = '/registration' element = {<RegistrationPage></RegistrationPage>}></Route>
                             <Route path = '/movie/:id' element = {<MoviePage></MoviePage>}></Route>
                             <Route path = '/actor/:id' element = {<ActorPage></ActorPage>}></Route> 
+                            <Route path = '/admin/genre' element = {<AdminGenre></AdminGenre>}></Route> 
                         </Route>
                     </Routes>
                 </BrowserRouter>
