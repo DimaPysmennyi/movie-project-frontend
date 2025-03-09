@@ -11,7 +11,7 @@
 
 .genreh1{
     color:white;
-    font-size: 24px;
+    font-size: 48px;
     
 }
 
@@ -22,17 +22,34 @@
     border-left: 2px solid white;
 }
 
-.selectprr{
+.selectorr{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
+.namediv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.descriptiondiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
 .selector {
     height:50px;
     width: 400px;
     padding: 8px;
-    font-size: 16px;
+    font-size: 32px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -43,43 +60,36 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 400px;
+    
 }
 
 .namelabel {
-    font-size: 14px;
+    font-size: 48px;
     font-weight: bold;
     margin-bottom: 5px;
     color: white;
 }
 .descriptionlabel{
-    font-size: 14px;
+    font-size: 48px;
     font-weight: bold;
     margin-bottom: 5px;
     color: white
 }
 
 .descriptioninput {
-    width: 100%;
-    padding: 8px;
+    width: 400px;
+    height: 300px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease-in-out;
+
 }
 .nameinput {
-    width: 100%;
-    padding: 8px;
+    width: 400px;
+    height: 50px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease-in-out;
-}
-
-input:focus {
-    border-color: #007bff;
 }
 
 p {

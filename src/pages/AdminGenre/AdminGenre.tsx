@@ -47,6 +47,7 @@ return (
                     <label className="descriptionlabel">Description:</label>
                     <input className="descriptioninput" {...register("description", { required: "Description is required" })} />
                     {errors.description && <p>{errors.description.message}</p>}
+                    
                 </div>
                 <button type="submit">Update</button>
             </form>
