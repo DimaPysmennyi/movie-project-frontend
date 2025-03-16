@@ -27,7 +27,7 @@ export function useActorById(id: number){
             try{
                 let response = await fetch(`http://localhost:8000/movie/actor/${id}`);
                 let actor = await response.json();
-                setActor(actor);
+                setActor(actor.data);
             } catch(error){
                 const err = error instanceof Error ? error.message : undefined
                 setError(err);

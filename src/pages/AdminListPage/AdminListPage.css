@@ -1,0 +1,70 @@
+.admin-headline{
+    display: flex;
+    border-left: 4px solid white;
+    height: 55px;
+    padding-left: 15px;
+}
+
+.admin-list-panel h1{
+    font-size: 48px;
+    color: white;
+    font-weight: 600;
+}
+.admin-list-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 55px 30px 55px;
+    background: linear-gradient(90deg,#14181C 0%, #333537 50%, #14181C 100%);
+    width: 100%;
+    min-height: 80vh;
+}
+
+.admin-list-state{
+    display: flex;
+
+}
+
+.admin-list-state div{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+    color: #5C56FF;
+    transition: 0.2s all ease;
+    padding: 0 10px 0 10px;
+    height: 40px;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.admin-list-state div:hover{
+    cursor: pointer;
+    color: #746fff;
+}
+
+.list-object-div{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 40px;
+    background-color: #55626C;
+    color: #E1E0FF;
+    text-decoration: none;
+    border-radius: 10px; 
+}
+
+.list-object-div a{
+    color: #E1E0FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.list-object{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}

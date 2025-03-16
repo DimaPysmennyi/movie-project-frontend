@@ -27,7 +27,7 @@ export function useMovies(){
                 setIsLoading(true);
                 const response = await fetch('http://localhost:8000/movie/all');
                 const movies = await response.json();
-                setMovies(movies);
+                setMovies(movies.data);
             } catch(error){
                 const err = error instanceof Error ? error.message : undefined;
                 setError(`${err}`);

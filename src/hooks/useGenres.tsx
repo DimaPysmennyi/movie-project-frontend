@@ -11,9 +11,9 @@ export function useGenres(){
 
     useEffect(() => {   
         async function getGenres(){
-            const response = await fetch('http://localhost:8000/movie/genres');
+            const response = await fetch('http://localhost:8000/genre/all');
             const genres = await response.json();
-            setGenres(genres);
+            setGenres(genres.data);
         }
 
         getGenres();

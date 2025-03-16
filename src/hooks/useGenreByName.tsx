@@ -9,7 +9,7 @@ export function useGenreByName(name: string){
             try{
                 let response = await fetch(`http://localhost:8000/movie/genre/${name}`);
                 let genre = await response.json();
-                setGenre(genre);
+                setGenre(genre.data);
             } catch(error){
                 const err = error instanceof Error ? error.message : undefined
                 setError(err);
