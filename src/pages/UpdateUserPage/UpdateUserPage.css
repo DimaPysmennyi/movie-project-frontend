@@ -1,0 +1,101 @@
+.user-update-page {
+    background: rgb(20,24,28);
+    background: linear-gradient(90deg, rgba(20,24,28,1) 0%, rgba(52,57,60,1) 50%, rgba(20,24,28,1) 100%);
+    color: white;
+    width: 100%;
+    height: auto;
+}
+
+.user-update-div {
+    margin: 50px;
+}
+
+.user-update-div h1{
+    font-size: 48px;
+    
+    margin-bottom: 20px;
+}
+
+.user-update-page-header{
+    border-left: 4px solid white;
+    padding-left: 10px;
+}
+
+.user-update-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.user-update-inputs label{
+    font-size: 48px;
+    font-weight: 500;
+    display: flex;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+
+.user-update-inputs input, textarea{
+    
+    background-color: #55626C;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    width: 550px;
+    height: 65px;
+    font-size: 42px;
+    border: none;
+}
+
+.user-update-inputs .picture-input{
+    width: 550px;
+    height: 350px;
+    font-size: 36px;
+}
+
+.user-input-div{
+    margin-left: auto;
+}
+
+.user-input-div p {
+    font-size: 28px;
+    margin: 0;
+    
+
+    color: rgb(243, 138, 138);
+}
+
+.user-update-btn {
+    margin-top: 20px;
+    width: 200px;
+    height: 60px;
+    background-color: #61676a;
+    font-size: 32px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-bottom:15px;
+    transition: all 0.2s ease;
+    
+}
+
+.user-update-btn:hover {
+    background-color: #4f555a; 
+    color: #fff;
+}
+
+.user-update-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-update-reviews{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}

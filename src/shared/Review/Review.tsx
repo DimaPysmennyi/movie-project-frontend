@@ -5,8 +5,8 @@ import { HandThumbsUp, HandThumbsDown, Controller } from "react-bootstrap-icons"
 interface IReviewProps{
     id: number
     title: string
-    rate: number
     text: string
+    rate: number
     likes: number
     dislikes: number
 }
