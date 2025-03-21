@@ -1,0 +1,51 @@
+.create-movie-selects{
+    display: flex;
+}
+
+.genre-select{
+    display: flex;
+    flex-direction: column;
+}
+
+.actor-select{
+    display: flex;
+    flex-direction: column;
+}
+
+.create-movie-selects {
+    display: flex;
+    
+    gap: 20px;
+  }
+  
+  .genre-select, .actor-select {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-width: 200px;
+  }
+  
+  
+  .create-movie-selects label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 200px;
+  }
+  
+  .create-movie-selects input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    accent-color: #3498db;
+  }
+  
+  .create-movie-selects input[type="checkbox"]:hover {
+    accent-color: #2980b9;
+  }
+  
+  .create-movie-selects input[type="checkbox"]:checked {
+    accent-color: #3498db;
+  }

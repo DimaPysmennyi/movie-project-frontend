@@ -6,7 +6,7 @@ interface IActorMovie{
     actorId: number,
 }
 
-interface IActor{
+export interface IActor{
     id: number,
     name: string,
     birthname: string,
