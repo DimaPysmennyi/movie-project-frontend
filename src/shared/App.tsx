@@ -11,6 +11,7 @@ import { ActorPage } from '../pages/ActorPage/ActorPage'
 import { UpdateUserPage } from '../pages/UpdateUserPage/UpdateUserPage'
 import { AdminMoviePage } from '../pages/AdminMoviePage/AdminMoviePage'
 import { AdminListPage } from '../pages/AdminListPage/AdminListPage'
+import { CreateMoviePage } from '../pages/CreateUserPage/CreateMoviePage'
 export function App(){
     return (
         <div>
@@ -22,8 +23,12 @@ export function App(){
                             <Route path = '/films' element = {<FilmsPage></FilmsPage>}></Route>
                             <Route path = '/login' element = {<LoginPage></LoginPage>}></Route>
                             <Route path = '/registration' element = {<RegistrationPage></RegistrationPage>}></Route>
+                            <Route path = '/list' element = {<AdminListPage></AdminListPage>}></Route>
+                            <Route path = '/movie/create' element = {<CreateMoviePage></CreateMoviePage>}></Route> 
                             <Route path = '/movie/:id' element = {<MoviePage></MoviePage>}></Route>
-                            <Route path = '/actor/:id' element = {<ActorPage></ActorPage>}></Route> 
+                            <Route path = '/actor/:id' element = {<ActorPage></ActorPage>}></Route>
+                            <Route path = '/user/update/:id' element = {<UpdateUserPage></UpdateUserPage>}></Route>
+                            <Route path = '/movie/update/:id' element = {<AdminMoviePage></AdminMoviePage>}></Route> 
                         </Route>
                     </Routes>
                 </BrowserRouter>
