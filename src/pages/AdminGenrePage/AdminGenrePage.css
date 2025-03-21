@@ -1,0 +1,99 @@
+.admin-genre-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px 55px 50px 55px;
+    background: linear-gradient(90deg,#14181C 0%, #333537 50%, #14181C 100%);
+    width: 100%;
+    min-height: 79vh;
+}
+
+.admin-genre-panel h1{
+    font-size: 48px;
+    color: white;
+    font-weight: 600;
+}
+
+.admin-genre-panel form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 25px;
+    gap: 25px;
+}
+
+
+.admin-headline{
+    display: flex;
+    border-left: 4px solid white;
+    height: 55px;
+    padding-left: 15px;
+}
+
+.selector {
+    height:50px;
+    width: 400px;
+    padding: 8px;
+    font-size: 32px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.genre-input{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genre-input input{
+    width: 460px;
+    height: 55px;
+    padding: 10px;
+    color: white;
+    font-size: 28px;
+    background-color: #55626C;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.genre-input textarea{
+    width: 460px;
+    height: 150px;
+    padding: 10px;
+    color: white;
+    font-size: 28px;
+    border-radius: 5px;
+    resize: none;
+    background-color: #55626C;
+    outline: none;
+    border: none;
+}
+
+.genre-error {
+    color: red;
+    font-size: 28px;
+}
+
+hr{
+    color: white;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+} 
+

@@ -6,9 +6,8 @@ import { MoviePage } from '../pages/MoviePage/MoviePage'
 import { LoginPage } from '../pages/LoginPage/LoginPage'
 import { RegistrationPage } from '../pages/RegistrationPage/RegistrationPage'
 import { RecentlyViewedContextProvider } from '../context/recentlyViewedContext'
-import { AppRoutes } from '../routes/Routes'
 import { ActorPage } from '../pages/ActorPage/ActorPage'
-import { AdminGenre } from '../pages/AdminGenre/AdminGenre'
+import { AdminGenrePage } from '../pages/AdminGenrePage/AdminGenrePage'
 import { UpdateUserPage } from '../pages/UpdateUserPage/UpdateUserPage'
 import { AdminMoviePage } from '../pages/AdminMoviePage/AdminMoviePage'
 import { AdminListPage } from '../pages/AdminListPage/AdminListPage'
@@ -25,7 +24,11 @@ export function App(){
                             <Route path = '/registration' element = {<RegistrationPage></RegistrationPage>}></Route>
                             <Route path = '/movie/:id' element = {<MoviePage></MoviePage>}></Route>
                             <Route path = '/actor/:id' element = {<ActorPage></ActorPage>}></Route> 
-                            <Route path = '/admin/genre' element = {<AdminGenre></AdminGenre>}></Route> 
+                            <Route path = '/admin/all' element = {<AdminListPage></AdminListPage>}></Route>
+                            <Route path = '/admin/movie/:id' element = {<AdminMoviePage></AdminMoviePage>}></Route> 
+                            <Route path = '/admin/genre/:id' element = {<AdminGenrePage></AdminGenrePage>}></Route> 
+                            <Route path = '/admin/user/:id' element = {<UpdateUserPage></UpdateUserPage>}></Route> 
+
                         </Route>
                     </Routes>
                 </BrowserRouter>
